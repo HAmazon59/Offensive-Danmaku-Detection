@@ -1,7 +1,7 @@
 from utils import prohibition_check
 from bilibili_api import live, sync
 
-ROOM_ID = 21013446
+ROOM_ID = 1
 MSG_INFO = {'timestamp' : 0, 'uid' : 0, 'nickname' : '', 'message' : ''}
 PROHIBITION_LIST = []
 
@@ -48,7 +48,7 @@ async def on_sc(event: dict, offenceCheck: bool = True):
 
     if (offenceCheck) and (len(PROHIBITION_LIST) > 0):
         if prohibition_check(superchat, PROHIBITION_LIST, **MSG_INFO):
-            message = '▲' + message
+            message = '▲ ' + message
             
     print(message)
 
